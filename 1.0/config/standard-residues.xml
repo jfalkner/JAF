@@ -1,0 +1,162 @@
+<!--
+    Copyright 2004 Jayson Falkner
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<!-- Residue reference: http://www.matrixscience.com/help/aa_help.html
+     pKa reference: Bjellqvist, B.,Hughes, G.J., Pasquali, Ch., Paquet, N., Ravier, F., Sanchez, J.-Ch., Frutiger, S. & Hochstrasser, D.F. The focusing positions of polypeptides in immobilized pH gradients can be predicted from their amino acid sequences. Electrophoresis 1993, 14, 1023-1031.   -->
+<residues>
+  <residue name="Alanine" oneLetter="A" threeLetter="Ala">
+    <pKa internal="0.00" nTerminus="7.59" cTerminus="3.55"/>
+    <contains atom="C" count="3"/>
+    <contains atom="H" count="5"/>
+    <contains atom="N" count="1"/>
+    <contains atom="O" count="1"/>
+  </residue>
+  <residue name="Arginine" oneLetter="R" threeLetter="Arg">
+    <pKa internal="12.00" nTerminus="7.50" cTerminus="3.55"/>
+    <contains atom="C" count="6"/>
+    <contains atom="H" count="12"/>
+    <contains atom="N" count="4"/>
+    <contains atom="O" count="1"/>
+  </residue>
+  <residue name="Asparagine" oneLetter="N" threeLetter="Asn">
+    <pKa internal="0.00" nTerminus="7.50" cTerminus="3.55"/>
+    <contains atom="C" count="4"/>
+    <contains atom="H" count="6"/>
+    <contains atom="N" count="2"/>
+    <contains atom="O" count="2"/>
+  </residue>
+  <residue name="Aspartic Acid" oneLetter="D" threeLetter="Asp">
+    <pKa internal="4.05" nTerminus="7.50" cTerminus="4.55"/>
+    <contains atom="C" count="4"/>
+    <contains atom="H" count="5"/>
+    <contains atom="N" count="1"/>
+    <contains atom="O" count="3"/>
+  </residue>
+  <residue name="Cysteine" oneLetter="C" threeLetter="Cys">
+    <pKa internal="9.0" nTerminus="7.50" cTerminus="3.55"/>
+    <contains atom="C" count="3"/>
+    <contains atom="H" count="5"/>
+    <contains atom="N" count="1"/>
+    <contains atom="O" count="1"/>
+    <contains atom="S" count="1"/>
+  </residue>
+  <residue name="Glutamic Acid" oneLetter="E" threeLetter="Glu">
+    <pKa internal="4.45" nTerminus="7.70" cTerminus="4.75"/>
+    <contains atom="C" count="5"/>
+    <contains atom="H" count="7"/>
+    <contains atom="N" count="1"/>
+    <contains atom="O" count="3"/>
+  </residue>
+  <residue name="Glutamine" oneLetter="Q" threeLetter="Gln">
+    <pKa internal="0.00" nTerminus="7.50" cTerminus="3.55"/>
+    <contains atom="C" count="5"/>
+    <contains atom="H" count="8"/>
+    <contains atom="N" count="2"/>
+    <contains atom="O" count="2"/>
+  </residue>
+  <residue name="Glycine" oneLetter="G" threeLetter="Gly">
+    <pKa internal="0.00" nTerminus="7.50" cTerminus="3.55"/>
+    <contains atom="C" count="2"/>
+    <contains atom="H" count="3"/>
+    <contains atom="N" count="1"/>
+    <contains atom="O" count="1"/>
+  </residue>
+  <residue name="Histidine" oneLetter="H" threeLetter="His">
+    <pKa internal="5.98" nTerminus="7.50" cTerminus="3.55"/>
+    <contains atom="C" count="6"/>
+    <contains atom="H" count="7"/>
+    <contains atom="N" count="3"/>
+    <contains atom="O" count="1"/>
+  </residue>
+  <residue name="Isoleucine" oneLetter="I" threeLetter="Ile">
+    <pKa internal="0.00" nTerminus="7.50" cTerminus="3.55"/>
+    <contains atom="C" count="6"/>
+    <contains atom="H" count="11"/>
+    <contains atom="N" count="1"/>
+    <contains atom="O" count="1"/>
+  </residue>
+  <residue name="Leucine" oneLetter="L" threeLetter="Leu">
+    <pKa internal="0.00" nTerminus="7.50" cTerminus="3.55"/>
+    <contains atom="C" count="6"/>
+    <contains atom="H" count="11"/>
+    <contains atom="N" count="1"/>
+    <contains atom="O" count="1"/>
+  </residue>
+  <residue name="Lysine" oneLetter="K" threeLetter="Lys">
+    <pKa internal="10.00" nTerminus="7.50" cTerminus="3.55"/>
+    <contains atom="C" count="6"/>
+    <contains atom="H" count="12"/>
+    <contains atom="N" count="2"/>
+    <contains atom="O" count="1"/>
+  </residue>
+  <residue name="Methionine" oneLetter="M" threeLetter="Met">
+    <pKa internal="0.00" nTerminus="7.00" cTerminus="3.55"/>
+    <contains atom="C" count="5"/>
+    <contains atom="H" count="9"/>
+    <contains atom="N" count="1"/>
+    <contains atom="O" count="1"/>
+    <contains atom="S" count="1"/>
+  </residue>
+  <residue name="Phenylalanine" oneLetter="F" threeLetter="Phe">
+    <pKa internal="0.00" nTerminus="7.50" cTerminus="3.55"/>
+    <contains atom="C" count="9"/>
+    <contains atom="H" count="9"/>
+    <contains atom="N" count="1"/>
+    <contains atom="O" count="1"/>
+  </residue>
+  <residue name="Proline" oneLetter="P" threeLetter="Pro">
+    <pKa internal="12.0" nTerminus="8.36" cTerminus="3.55"/>
+    <contains atom="C" count="5"/>
+    <contains atom="H" count="7"/>
+    <contains atom="N" count="1"/>
+    <contains atom="O" count="1"/>
+  </residue>
+  <residue name="Serine" oneLetter="S" threeLetter="Ser">
+    <pKa internal="0.00" nTerminus="6.93" cTerminus="3.55"/>
+    <contains atom="C" count="3"/>
+    <contains atom="H" count="5"/>
+    <contains atom="N" count="1"/>
+    <contains atom="O" count="2"/>
+  </residue>
+  <residue name="Threonine" oneLetter="T" threeLetter="Thr">
+    <pKa internal="0.00" nTerminus="6.82" cTerminus="3.55"/>
+    <contains atom="C" count="4"/>
+    <contains atom="H" count="7"/>
+    <contains atom="N" count="1"/>
+    <contains atom="O" count="2"/>
+ </residue>
+  <residue name="Tryptophan" oneLetter="W" threeLetter="Trp">
+    <pKa internal="0.00" nTerminus="7.50" cTerminus="3.55"/>
+    <contains atom="C" count="11"/>
+    <contains atom="H" count="10"/>
+    <contains atom="N" count="2"/>
+    <contains atom="O" count="1"/>
+  </residue>
+  <residue name="Tyrosine" oneLetter="Y" threeLetter="Tyr">
+    <pKa internal="10.00" nTerminus="7.50" cTerminus="3.55"/>
+    <contains atom="C" count="9"/>
+    <contains atom="H" count="9"/>
+    <contains atom="N" count="1"/>
+    <contains atom="O" count="2"/>
+  </residue>
+  <residue name="Valine" oneLetter="V" threeLetter="Val">
+    <pKa internal="0.00" nTerminus="7.50" cTerminus="3.55"/>
+    <contains atom="C" count="5"/>
+    <contains atom="H" count="9"/>
+    <contains atom="N" count="1"/>
+    <contains atom="O" count="1"/>
+  </residue>
+</residues>

@@ -1,0 +1,44 @@
+<!--
+    Copyright 2004 Jayson Falkner
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<atoms>
+<!-- reference: http://physics.nist.gov -->
+  <atom name="H">
+    <isotope name="Hydrogen" massInDaltons="1.0078250321" probability="99.9885"/>
+    <isotope name="H2" massInDaltons=" 2.0141017780" probability="0.0115"/>
+  </atom>
+  <atom name="O">
+    <isotope name="O16" massInDaltons="15.9949146221" probability="99.757"/>
+    <isotope name="O17" massInDaltons="16.99913150" probability="0.038"/>
+    <isotope name="O18" massInDaltons="17.9991604" probability="0.205"/>
+  </atom>
+  <atom name="N">
+    <isotope name="N14" massInDaltons="14.0030740052" probability="99.632"/>
+    <isotope name="N15" massInDaltons="15.0001088984" probability="0.368"/>
+  </atom>
+  <atom name="C">
+    <isotope name="C12" massInDaltons="12.0000000" probability="98.93"/>
+    <isotope name="C13" massInDaltons="13.0033548378" probability="1.07"/>
+  </atom>
+  <atom name="P">
+    <isotope name="P31" massInDaltons="30.97376151" probability="100"/>
+  </atom>
+  <atom name="S">
+    <isotope name="S32" massInDaltons="31.97207069" probability="94.93"/>
+    <isotope name="S33" massInDaltons="32.97145850" probability="0.76"/>
+    <isotope name="S34" massInDaltons="33.96786683" probability="4.29"/>
+    <isotope name="S36" massInDaltons="35.96708088" probability="0.02"/>
+  </atom>
+</atoms>

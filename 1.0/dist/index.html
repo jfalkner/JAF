@@ -1,0 +1,83 @@
+<html>
+<head>
+  <title>ProteomeCommons.org Java Analysis Framework</title> 
+  <style type="text/css">
+  <!--
+  body {
+    font-family:helvetica;
+    font-size:12pt;
+    margin-left:20px;
+  }
+  h1 {
+    font-family:helvetica;
+    font-size:18pt;
+    margin-bottom:5px;
+    padding-bottom:0px;
+  }
+  h2 {
+    font-family:helvetica;
+    font-size:16pt;
+    margin-bottom:3px;
+    padding-bottom;0px;
+  }
+  h3 {
+    font-family:helvetica;
+    font-size:14pt;
+    margin-bottom:3px;
+    padding-bottom;0px;
+  }
+  // -->
+  </style>
+</head>
+<body>
+<h1>ProteomeCommons.org Java Analysis Framework 1.0</h1>
+<p>This is a proper Java framework for abstracting commonly used information in proteomics projects such as atoms and residues. Anyone who wishes to use this informaiton may simply include the ProteomeCommons.org-JAF.jar in their classpath and all of the information will be readily available. In addition to providing the raw information, this project includes several helper classes and functions that simplify use of the code.</p>
+<p>The goal of this framework is to completely abstract all of the atomic information and standard and non-standard residue information that proteomics software projects may need.</p>
+<ul>
+  <li><a href="#credits">Credits</a></li>
+  <li><a href="#changes">Changes</a></li>
+  <li><a href="#examples">Examples</a></li>
+  <li><a href="docs/api/index.html">Java API Documentation</a></li>
+  <li><a href="#license">Licensing Information</a></li>
+</ul>
+
+<h2><a name="credits">Credits</a></h2>
+<p>This is a project supported and contributed to by many different people. Here is a formal list of all of those who have submitted code and/or documentation.</p>
+<ul>
+  <li>Jayson Falkner - jfalkner@umich.edu</li>
+  <li>Peter Ulintz - pulintz@umich.edu</li>
+</ul>
+<p>Support for this project, in part, comes from the <a href="http://www.proteomeconsortium.org">National Resource for Proteomics and Pathways (NRPP), http://www.proteomeconsortium.org</a>.</p>
+
+<h2><a name="changes">Features of 1.0</a></h2>
+<ul>
+  <li>Full support for the 20 common amino acids.</li>
+  <li>Full support for C, H, N, O, S, and P atoms, including isotopes.</li>
+  <li>Example code for displaying atomic and residue information in an easy-to-read format.</li>
+  <li>Example code for calculating isotope distributions.</li>
+</ul>
+
+<h2><a name="examples">Examples</a></h2>
+<p>This library is useful for several different things. The following examples illustrate some of the more common uses of this framework.</p>
+<ul>
+  <li><a href="#printing">How to print/display residue information.</a></li>
+  <li><a href="#isotopeDist">Calculating isotope distributions.</a></li>
+</ul>
+
+<h2><a name="printing">PrintCommonResidues.java</a></h2>
+<p>This tool displays a list of the currnent common residues in an easy-to-read format.</p>
+<ul>
+  <li><a href="src/org/proteomecommons/jaf/util/PrintCommonResidues.java">Source-Code</a></li>
+</ul>
+
+<h2><a name="isotopeDist">CalculateIsotopeDistribution.java</a></h2>
+<p>This tool quickly approximates isotope distributions and displays the results. Distributions can be calculated for a set of atoms, a set of residues, or for a given mass.</p>
+<ul>
+  <li><a href="src/org/proteomecommons/jaf/util/CaclulateIsotopeDistribution.java">PrintPeakList.java</a></li>
+</ul>
+
+<h2><a name="license">Licensing Information</a></h2>
+<p>The goal of this project is to provide free, open-source code that anyone may use as they please; However, everyting in this project is strictly licensed under the Apache 2.0 license. This protects the authors and contributors of this project, and it encourages fair use of the code. A copy of the Apache 2.0 license may be found on-line at <a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a> or as plain text in the LICENSE.txt file included in this archive.</p>
+<p>In addition to the Apache 2.0 license it is requested that any person or organization that uses the Falk Model Project properly reference this project. In at least one public, appropriate place, please note that the "Falk Model Project" is being used, and provide a URL to the proteomecommons.org copy of this archive.</p>
+</body>
+</html>

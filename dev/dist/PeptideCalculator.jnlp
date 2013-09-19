@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- JNLP file for the Peptide Calculator -->
+<jnlp spec="1.0+" codebase="http://www.proteomecommons.org/archive/">
+  <information>
+    <title>ProteomeCommons.org Peptide Calculator</title>
+    <vendor>ProteomeCommons.org</vendor>
+    <homepage href="http://www.proteomecommons.org/archive/1121456120805/index.html"/>
+    <description>A calculator built on top of the ProteomeCommons.org JAF framework that calculates peptide masses and pI values along with providing the option of doing peptide fragmentation.</description>
+    <offline-allowed/>
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <resources>
+    <j2se version="1.4+"/>
+      <jar href="ProteomeCommons.org-JAF.jar"/>
+      <jar href="lib/ProteomeCommons.org-IO.jar"/>
+  </resources>
+  <application-desc main-class="org.proteomecommons.jaf.pepcalc.PepCalc"/>
+</jnlp>

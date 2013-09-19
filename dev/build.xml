@@ -1,0 +1,100 @@
+<project name="ProteomeCommons.org Server Libraries" default="dist" basedir=".">
+    <description>
+        simple example build file
+    </description>
+  <!-- set global properties for this build -->
+  <property name="src" location="src"/>
+  <property name="build" location="build"/>
+  <property name="dist"  location="dist"/>
+  <property name="lib"  location="lib"/>
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}"/>
+  </target>
+
+  <target name="compile" depends="init"
+        description="compile the source " >
+    <!-- Compile the java code from ${src} into ${build} -->
+    <javac srcdir="${src}" destdir="${build}" extdirs="${lib}"/>
+  </target>
+
+  <target name="dist" depends="compile"
+        description="generate the distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${dist}"/>
+
+    <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
+    <jar jarfile="${dist}/ProteomeCommons.org-JAF.jar" basedir="${build}" />
+  </target>
+
+  <target name="clean"
+        description="clean up" >
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="${build}"/>
+    <delete dir="dist/docs/api"/>
+    <delete file="build.xml~"/>
+    <delete file="dist/docs/residue-reference.html"/>
+    <delete file="dist/docs/atom-reference.html"/>
+    <delete file="dist/docs/residue-combination-reference.html"/>
+    <delete file="${dist}/ProteomeCommons.org-JAF.jar"/>
+  </target>
+
+  <target name="javadoc">
+    <javadoc
+           destdir="dist/docs/api"
+           author="true"
+           version="true"
+           use="true"
+           windowtitle="ProteomeCommons.org JAF API">
+
+      <packageset dir="src" defaultexcludes="yes">
+        <include name="org/proteomecommons/jaf/**"/>
+<!--        <exclude name="com/dummy/test/doc-files/**"/> -->
+      </packageset>
+
+      <doctitle><![CDATA[<h1>ProteomeCommons.org JAF API</h1>]]></doctitle>
+      <bottom><![CDATA[<i>Licensed for use under the Apache 2.0 license. See license.txt included with this downloads.</i>]]></bottom>
+      <tag name="todo" scope="all" description="To do:"/>
+      <group title="Java Analysis Framework (JAF)" packages="org.proteomecommons.jaf.*"/>
+      <group title="Utility Code" packages="org.proteomecommons.jaf.util.*"/>
+      <link offline="true" href="http://java.sun.com/products/jdk/1.4/docs/api/" />
+<!--      <link href="http://developer.java.sun.com/developer/products/xml/docs/api/"/> -->
+    </javadoc>
+  </target>
+
+  <target name="doc">
+
+    <!-- make a reference for residues  -->
+    <java classname="org.proteomecommons.jaf.util.HTMLAllResidueReference"
+          output="dist/docs/residue-reference.html">
+<!--      <arg value="-h"/> -->
+      <classpath>
+        <pathelement location="lib/ProteomeCommons.org-IO.jar"/>
+        <pathelement path="dist/ProteomeCommons.org-JAF.jar"/>
+      </classpath>
+    </java>
+
+    <!-- make a reference for atoms  -->
+    <java classname="org.proteomecommons.jaf.util.HTMLAtomReference"
+          output="dist/docs/atom-reference.html">
+      <classpath>
+        <pathelement location="lib/ProteomeCommons.org-IO.jar"/>
+        <pathelement path="dist/ProteomeCommons.org-JAF.jar"/>
+      </classpath>
+    </java>
+
+    <!-- make a reference for residue combinations  -->
+    <java classname="org.proteomecommons.jaf.util.HTMLResidueCombinationTable"
+          output="dist/docs/residue-combination-reference.html">
+      <classpath>
+        <pathelement location="lib/ProteomeCommons.org-IO.jar"/>
+        <pathelement path="dist/ProteomeCommons.org-JAF.jar"/>
+      </classpath>
+    </java>
+  </target>
+</project>
+
+

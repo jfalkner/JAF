@@ -1,0 +1,11 @@
+<ProteomeCommons.org>
+  <Project
+    name="ProteomeCommons Java Analysis Framework"
+    version="1.0">
+    <Author id="jfalkner@umich.edu"/>
+    <Description>An open-source framework for referencing common mass spectrometry data such as atoms and residues. This framework provides a programmer with an easy to use library for writing programs that rely on common mass spectrometry data.</Description>
+    <Link type="Documentation" url="index.html"/>
+    <Link type="Java API Documentation" url="docs/api/index.html"/>
+    <Link type="Packaged API (JAR)" url="ProteomeCommons.org-JAF.jar"/>
+  </Project>
+</ProteomeCommons.org>

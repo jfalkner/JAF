@@ -1,0 +1,16 @@
+td {
+  border-width:0px;
+  border-bottom-width:1px;
+  border-style:solid;
+  border-color:black;
+  padding:2px;
+  padding-left:10px;
+  padding-right:10px;
+}
+.zebra_stripe {
+  background:#dddddd;
+  border-width:0px;
+  border-bottom-width:1px;
+  border-style:solid;
+  border-color:black;
+}

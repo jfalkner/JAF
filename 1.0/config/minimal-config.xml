@@ -1,0 +1,120 @@
+<!--
+    Copyright 2004 Jayson Falkner
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<model-config>
+
+  <!-- include the atoms -->
+  <xi:include href="standard-atoms.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+
+  <!-- include the standard residues-->
+  <xi:include href="standard-residues.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+  
+
+<!-- potential modifications to include -->
+<potentialModifications>
+  <potentialModification name="Carboxyamidomethylation(Lab Prepared)" required="true">
+    <effects oneLetter="C"/>
+    <atomsAdded>
+      <contains atom="H" count="3"/>
+      <contains atom="C" count="2"/>
+      <contains atom="N" count="1"/>
+      <contains atom="O" count="1"/>
+    </atomsAdded>  
+  </potentialModification>
+
+  <potentialModification name="Deamidation">
+    <effects oneLetter="Q"/>
+    <effects oneLetter="N"/>
+    <atomsLost>
+      <contains atom="H" count="1"/>
+      <contains atom="N" count="1"/>
+    </atomsLost>  
+    <atomsAdded>
+      <contains atom="O" count="1"/>
+    </atomsAdded>  
+  </potentialModification>
+
+  <potentialModification name="Oxidation">
+    <effects oneLetter="M"/>
+    <effects oneLetter="H"/>
+    <effects oneLetter="W"/>
+    <atomsAdded>
+      <contains atom="O" count="1"/>
+    </atomsAdded>
+  </potentialModification>
+</potentialModifications>
+
+ <!-- possible ion types to look for -->
+ <possible-ions>
+   <!-- TODO: reference immonium ions -->
+<!--   <searchForImmoniums /> -->
+   <!-- TODO: reference internals -->
+<!--   <searchForInternals /> -->
+   <!-- TODO: reference hydration -->
+<!--   <searchForHydration />-->
+  <!-- TODO: reference water loss -->
+<!--  <searchForWaterLoss /> -->
+  <!-- TODO: reference ammonia loss -->
+<!--  <searchForAmmoniaLoss /> -->
+  <!-- TODO: reference urea loss -->
+<!--  <searchForUreaLoss /> -->
+  <!-- TODO: reference poorly called mono-isotopic peaks -->
+<!--  <searchForPoorlyCalledMonoisotopicPeaks /> -->
+ 
+  <!-- TODO: reference standard ion types, switch these to entries similar to the above -->
+<!--
+   <ion name="A" addNTerminus="true">
+     <atomsLost>
+       <contains atom="C" count="1"/>
+       <contains atom="O" count="1"/>
+     </atomsLost>
+   </ion>
+-->
+   <ion name="B" addNTerminus="true" />
+   <!--
+   <ion name="C" addNTerminus="true">
+     <atomsAdded>
+       <contains atom="N" count="1"/>
+       <contains atom="H" count="3"/>
+     </atomsAdded>
+   </ion>
+   <ion name="X" addCTerminus="true">
+     <atomsAdded>
+       <contains atom="O" count="1"/>
+       <contains atom="C" count="1"/>
+     </atomsAdded>
+   </ion>
+-->
+   <ion name="Y" addCTerminus="true">
+     <atomsAdded>
+       <contains atom="H" count="2"/>
+     </atomsAdded>
+   </ion>
+<!--
+   <ion name="Z" addCTerminus="true">
+     <atomsLost>
+       <contains atom="N" count="1"/>
+       <contains atom="H" count="1"/>
+     </atomsLost>
+   </ion>
+ -->
+ </possible-ions>
+ 
+ <!-- how many tryptic cleaves can be missed? -->
+ <maxMissedTrypticCleaves count="2"/>
+ 
+ <!-- should auto machine calibration be used? -->
+ <autoMachineCalibration enable="no" ppmWindow="1000"/>
+</model-config>

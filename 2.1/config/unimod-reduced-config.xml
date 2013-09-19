@@ -1,0 +1,1215 @@
+<!--
+    Copyright 2004 Jayson Falkner
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<model-config>
+
+  <!-- include the atoms -->
+  <xi:include href="standard-atoms.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+
+  <!-- include the standard residues-->
+  <xi:include href="standard-residues.xml" xmlns:xi="http://www.w3.org/2003/XInclude"/>
+
+<!-- potential modifications to include -->
+<potentialModifications>
+<potentialModification name="Acetylation">
+  <atomsAdded>
+    <contains atom="H" count="2"/>
+    <contains atom="O" count="1"/>
+    <contains atom="C" count="2"/>
+  </atomsAdded>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+  <effects oneLetter="K"/>
+</potentialModification>
+<potentialModification name="Amidation">
+  <atomsLost>
+    <contains atom="O" count="-1"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="H" count="1"/>
+    <contains atom="N" count="1"/>
+  </atomsAdded>
+  <effectsAnyNTerminus/>
+</potentialModification>
+<potentialModification name="Biotinylation">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="14"/>
+    <contains atom="O" count="2"/>
+    <contains atom="N" count="2"/>
+    <contains atom="C" count="10"/>
+  </atomsAdded>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+  <effects oneLetter="K"/>
+</potentialModification>
+<potentialModification name="Iodoacetamide derivative">
+  <atomsAdded>
+    <contains atom="H" count="3"/>
+    <contains atom="O" count="1"/>
+    <contains atom="N" count="1"/>
+    <contains atom="C" count="2"/>
+  </atomsAdded>
+  <effects oneLetter="H"/>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+  <effects oneLetter="K"/>
+  <effects oneLetter="C"/>
+  <effects oneLetter="E"/>
+  <effects oneLetter="D"/>
+</potentialModification>
+<potentialModification name="Carbamylation">
+  <atomsAdded>
+    <contains atom="H" count="1"/>
+    <contains atom="O" count="1"/>
+    <contains atom="N" count="1"/>
+    <contains atom="C" count="1"/>
+  </atomsAdded>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+  <effects oneLetter="K"/>
+  <effects oneLetter="R"/>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="Deamidation">
+  <atomsLost>
+    <contains atom="H" count="-1"/>
+    <contains atom="N" count="-1"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="O" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="Q"/>
+  <effects oneLetter="N"/>
+</potentialModification>
+<potentialModification name="Homoserine">
+  <atomsLost>
+    <contains atom="S" count="-1"/>
+    <contains atom="H" count="-2"/>
+    <contains atom="C" count="-1"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="O" count="1"/>
+  </atomsAdded>
+  <effectsAnyNTerminus/>
+</potentialModification>
+<potentialModification name="Homoserine lactone">
+  <atomsLost>
+    <contains atom="S" count="-1"/>
+    <contains atom="H" count="-4"/>
+    <contains atom="C" count="-1"/>
+  </atomsLost>
+  <effectsAnyNTerminus/>
+</potentialModification>
+<potentialModification name="Methyl ester">
+  <atomsAdded>
+    <contains atom="H" count="2"/>
+    <contains atom="C" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="S"/>
+  <effects oneLetter="E"/>
+  <effects oneLetter="D"/>
+  <effectsAnyNTerminus/>
+  <effects oneLetter="T"/>
+</potentialModification>
+<potentialModification name="N-Acetylation">
+  <atomsAdded>
+    <contains atom="H" count="2"/>
+    <contains atom="O" count="1"/>
+    <contains atom="C" count="2"/>
+  </atomsAdded>
+  <effectsAnyCTerminus/>
+</potentialModification>
+<potentialModification name="N-Formylation">
+  <atomsAdded>
+    <contains atom="O" count="1"/>
+    <contains atom="C" count="1"/>
+  </atomsAdded>
+  <effectsAnyCTerminus/>
+</potentialModification>
+<potentialModification name="N-isopropylcarboxamidomethyl">
+  <atomsAdded>
+    <contains atom="H" count="9"/>
+    <contains atom="O" count="1"/>
+    <contains atom="N" count="1"/>
+    <contains atom="C" count="5"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="Oxidation">
+  <atomsAdded>
+    <contains atom="O" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="W"/>
+  <effects oneLetter="M"/>
+  <effects oneLetter="H"/>
+</potentialModification>
+<potentialModification name="Biotinyl-iodoacetamidyl-3,6-dioxaoctanediamine">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="30"/>
+    <contains atom="O" count="5"/>
+    <contains atom="N" count="4"/>
+    <contains atom="C" count="18"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="Phosphorylation">
+  <atomsAdded>
+    <contains atom="H" count="1"/>
+    <contains atom="P" count="1"/>
+    <contains atom="O" count="3"/>
+  </atomsAdded>
+  <effects oneLetter="S"/>
+  <effects oneLetter="T"/>
+  <effects oneLetter="Y"/>
+</potentialModification>
+<potentialModification name="Phosphorylation without neutral loss">
+  <atomsAdded>
+    <contains atom="H" count="1"/>
+    <contains atom="P" count="1"/>
+    <contains atom="O" count="3"/>
+  </atomsAdded>
+  <effects oneLetter="T"/>
+  <effects oneLetter="S"/>
+  <effects oneLetter="H"/>
+  <effects oneLetter="D"/>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="Phosphorylation with prompt loss of phosphate">
+  <atomsLost>
+    <contains atom="H" count="-2"/>
+    <contains atom="O" count="-1"/>
+  </atomsLost>
+  <effects oneLetter="Y"/>
+  <effects oneLetter="T"/>
+  <effects oneLetter="S"/>
+</potentialModification>
+<potentialModification name="Acrylamide adduct">
+  <atomsAdded>
+    <contains atom="H" count="5"/>
+    <contains atom="O" count="1"/>
+    <contains atom="N" count="1"/>
+    <contains atom="C" count="3"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="Pyridyl">
+  <atomsAdded>
+    <contains atom="H" count="5"/>
+    <contains atom="O" count="1"/>
+    <contains atom="N" count="1"/>
+    <contains atom="C" count="7"/>
+  </atomsAdded>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+  <effects oneLetter="K"/>
+</potentialModification>
+<potentialModification name="S-carbamoylmethylcysteine cyclization (N-terminus)">
+  <atomsLost>
+    <contains atom="H" count="-3"/>
+    <contains atom="N" count="-1"/>
+  </atomsLost>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+</potentialModification>
+<potentialModification name="Pyro-glu from E">
+  <atomsLost>
+    <contains atom="H" count="-2"/>
+    <contains atom="O" count="-1"/>
+  </atomsLost>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+</potentialModification>
+<potentialModification name="Pyro-glu from Q">
+  <atomsLost>
+    <contains atom="H" count="-3"/>
+    <contains atom="N" count="-1"/>
+  </atomsLost>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+</potentialModification>
+<potentialModification name="N-Succinimidyl-3-morpholine acetate">
+  <atomsAdded>
+    <contains atom="H" count="9"/>
+    <contains atom="O" count="2"/>
+    <contains atom="N" count="1"/>
+    <contains atom="C" count="6"/>
+  </atomsAdded>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+  <effects oneLetter="K"/>
+</potentialModification>
+<!--
+<potentialModification name="Sodium adduct">
+  <atomsLost>
+    <contains atom="H" count="-1"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="Na" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="D"/>
+  <effectsAnyNTerminus/>
+  <effects oneLetter="E"/>
+</potentialModification>
+-->
+<potentialModification name="S-pyridylethylation">
+  <atomsAdded>
+    <contains atom="H" count="7"/>
+    <contains atom="N" count="1"/>
+    <contains atom="C" count="7"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="Sulphone">
+  <atomsAdded>
+    <contains atom="O" count="2"/>
+  </atomsAdded>
+  <effects oneLetter="M"/>
+</potentialModification>
+<potentialModification name="Citrullination">
+  <atomsLost>
+    <contains atom="H" count="-1"/>
+    <contains atom="N" count="-1"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="O" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="R"/>
+</potentialModification>
+<potentialModification name="Methylation">
+  <atomsAdded>
+    <contains atom="H" count="2"/>
+    <contains atom="C" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="Q"/>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+  <effects oneLetter="N"/>
+  <effects oneLetter="K"/>
+  <effects oneLetter="H"/>
+  <effects oneLetter="C"/>
+  <effects oneLetter="R"/>
+</potentialModification>
+<potentialModification name="Hydroxylation">
+  <atomsAdded>
+    <contains atom="O" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="P"/>
+  <effects oneLetter="N"/>
+  <effects oneLetter="K"/>
+  <effects oneLetter="D"/>
+  <effects oneLetter="F"/>
+  <effects oneLetter="Y"/>
+</potentialModification>
+<potentialModification name="di-Methylation">
+  <atomsAdded>
+    <contains atom="H" count="4"/>
+    <contains atom="C" count="2"/>
+  </atomsAdded>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+  <effects oneLetter="R"/>
+  <effects oneLetter="K"/>
+</potentialModification>
+<potentialModification name="tri-Methylation">
+  <atomsAdded>
+    <contains atom="H" count="6"/>
+    <contains atom="C" count="3"/>
+  </atomsAdded>
+  <effects oneLetter="K"/>
+  <effects oneLetter="R"/>
+</potentialModification>
+<potentialModification name="Gamma-carboxylation">
+  <atomsAdded>
+    <contains atom="O" count="2"/>
+    <contains atom="C" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="E"/>
+  <effects oneLetter="D"/>
+</potentialModification>
+<potentialModification name="Beta-methylthiolation">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="2"/>
+    <contains atom="C" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="D"/>
+</potentialModification>
+<potentialModification name="Sulfation">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="O" count="3"/>
+  </atomsAdded>
+  <effects oneLetter="Y"/>
+</potentialModification>
+<!--
+<potentialModification name="Hexose">
+  <atomsAdded>
+    <contains atom="Hex" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="T"/>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+  <effects oneLetter="N"/>
+  <effects oneLetter="K"/>
+  <effects oneLetter="W"/>
+</potentialModification>
+-->
+<potentialModification name="Lipoyl">
+  <atomsAdded>
+    <contains atom="S" count="2"/>
+    <contains atom="H" count="12"/>
+    <contains atom="O" count="1"/>
+    <contains atom="C" count="8"/>
+  </atomsAdded>
+  <effects oneLetter="K"/>
+</potentialModification>
+<!--
+<potentialModification name="N-Acetylhexosamine">
+  <atomsAdded>
+    <contains atom="HexNAc" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="T"/>
+  <effects oneLetter="S"/>
+  <effects oneLetter="N"/>
+</potentialModification>
+-->
+<potentialModification name="Farnesylation">
+  <atomsAdded>
+    <contains atom="H" count="24"/>
+    <contains atom="C" count="15"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="Myristoylation">
+  <atomsAdded>
+    <contains atom="H" count="26"/>
+    <contains atom="O" count="1"/>
+    <contains atom="C" count="14"/>
+  </atomsAdded>
+  <effects oneLetter="K"/>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+</potentialModification>
+<potentialModification name="Pyridoxal phosphate">
+  <atomsAdded>
+    <contains atom="H" count="8"/>
+    <contains atom="P" count="1"/>
+    <contains atom="O" count="5"/>
+    <contains atom="N" count="1"/>
+    <contains atom="C" count="8"/>
+  </atomsAdded>
+  <effects oneLetter="K"/>
+</potentialModification>
+<potentialModification name="Palmitoylation">
+  <atomsAdded>
+    <contains atom="H" count="30"/>
+    <contains atom="O" count="1"/>
+    <contains atom="C" count="16"/>
+  </atomsAdded>
+  <effects oneLetter="T"/>
+  <effects oneLetter="S"/>
+  <effects oneLetter="K"/>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="Geranyl-geranyl">
+  <atomsAdded>
+    <contains atom="H" count="32"/>
+    <contains atom="C" count="20"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="Phosphopantetheine">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="20"/>
+    <contains atom="P" count="1"/>
+    <contains atom="O" count="6"/>
+    <contains atom="N" count="2"/>
+    <contains atom="C" count="11"/>
+  </atomsAdded>
+  <effects oneLetter="S"/>
+</potentialModification>
+<potentialModification name="Flavin adenine dinucleotide">
+  <atomsAdded>
+    <contains atom="H" count="31"/>
+    <contains atom="P" count="2"/>
+    <contains atom="O" count="15"/>
+    <contains atom="N" count="9"/>
+    <contains atom="C" count="27"/>
+  </atomsAdded>
+  <effects oneLetter="H"/>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="N-acyl diglyceride cysteine">
+  <atomsAdded>
+    <contains atom="H" count="96"/>
+    <contains atom="O" count="5"/>
+    <contains atom="C" count="51"/>
+  </atomsAdded>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+</potentialModification>
+<potentialModification name="Guanidination">
+  <atomsAdded>
+    <contains atom="H" count="2"/>
+    <contains atom="N" count="2"/>
+    <contains atom="C" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="K"/>
+</potentialModification>
+<potentialModification name="4-hydroxynonenal (HNE)">
+  <atomsAdded>
+    <contains atom="H" count="16"/>
+    <contains atom="O" count="2"/>
+    <contains atom="C" count="9"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+  <effects oneLetter="H"/>
+  <effects oneLetter="K"/>
+</potentialModification>
+<potentialModification name="N-glucuronylation">
+  <atomsAdded>
+    <contains atom="H" count="8"/>
+    <contains atom="O" count="6"/>
+    <contains atom="C" count="6"/>
+  </atomsAdded>
+  <effectsAnyCTerminus/>
+</potentialModification>
+<potentialModification name="glutathione disulfide">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="15"/>
+    <contains atom="O" count="6"/>
+    <contains atom="N" count="3"/>
+    <contains atom="C" count="10"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="oxidized Arginine biotinylated with biotin hydrazide">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="13"/>
+    <contains atom="O" count="2"/>
+    <contains atom="N" count="1"/>
+    <contains atom="C" count="9"/>
+  </atomsAdded>
+  <effects oneLetter="R"/>
+</potentialModification>
+<potentialModification name="oxidized proline biotinylated with biotin hydrazide">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="18"/>
+    <contains atom="O" count="2"/>
+    <contains atom="N" count="4"/>
+    <contains atom="C" count="10"/>
+  </atomsAdded>
+  <effects oneLetter="P"/>
+</potentialModification>
+<potentialModification name="cysteine oxidation to cysteic acid">
+  <atomsAdded>
+    <contains atom="O" count="3"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="Oxidation to nitro">
+  <atomsLost>
+    <contains atom="H" count="-1"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="O" count="2"/>
+    <contains atom="N" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="W"/>
+  <effects oneLetter="Y"/>
+</potentialModification>
+<potentialModification name="tryptophan oxidation to kynurenin">
+  <atomsLost>
+    <contains atom="C" count="-1"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="O" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="W"/>
+</potentialModification>
+<potentialModification name="tryptophan oxidation to hydroxykynurenin">
+  <atomsLost>
+    <contains atom="C" count="-1"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="O" count="2"/>
+  </atomsAdded>
+  <effects oneLetter="W"/>
+</potentialModification>
+<potentialModification name="tryptophan oxidation to formylkynurenin">
+  <atomsAdded>
+    <contains atom="O" count="2"/>
+  </atomsAdded>
+  <effects oneLetter="W"/>
+</potentialModification>
+<potentialModification name="phenylalanine oxidation to dihydroxyphenylalanine">
+  <atomsAdded>
+    <contains atom="O" count="2"/>
+  </atomsAdded>
+  <effects oneLetter="F"/>
+</potentialModification>
+<potentialModification name="histidine oxidation to aspargine">
+  <atomsLost>
+    <contains atom="H" count="-1"/>
+    <contains atom="N" count="-1"/>
+    <contains atom="C" count="-2"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="O" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="H"/>
+</potentialModification>
+<potentialModification name="histidine oxidation to aspartic acid">
+  <atomsLost>
+    <contains atom="H" count="-2"/>
+    <contains atom="N" count="-2"/>
+    <contains atom="C" count="-2"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="O" count="2"/>
+  </atomsAdded>
+  <effects oneLetter="H"/>
+</potentialModification>
+<potentialModification name="threonine oxidation to 2-amino-3-oxo-butanoic acid">
+  <atomsLost>
+    <contains atom="H" count="-2"/>
+  </atomsLost>
+  <effects oneLetter="T"/>
+</potentialModification>
+<potentialModification name="glutamine oxidation to 2-oxo-propanoic acid">
+  <atomsLost>
+    <contains atom="H" count="-6"/>
+    <contains atom="N" count="-2"/>
+    <contains atom="C" count="-2"/>
+  </atomsLost>
+  <effects oneLetter="Q"/>
+</potentialModification>
+<potentialModification name="glutamine oxidation to 2-oxo-propanoic acid (ethandioic acid)">
+  <atomsLost>
+    <contains atom="H" count="-8"/>
+    <contains atom="N" count="-2"/>
+    <contains atom="C" count="-3"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="O" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="Q"/>
+</potentialModification>
+<potentialModification name="Iminobiotinylation">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="15"/>
+    <contains atom="O" count="1"/>
+    <contains atom="N" count="3"/>
+    <contains atom="C" count="10"/>
+  </atomsAdded>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+  <effects oneLetter="K"/>
+</potentialModification>
+<potentialModification name="Tyrosine oxidation to 2-aminotyrosine">
+  <atomsAdded>
+    <contains atom="H" count="1"/>
+    <contains atom="N" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="Y"/>
+</potentialModification>
+<!--
+<potentialModification name="Acrylamide d3">
+  <atomsAdded>
+    <contains atom="H" count="2"/>
+    <contains atom="H2" count="3"/>
+    <contains atom="O" count="1"/>
+    <contains atom="N" count="1"/>
+    <contains atom="C" count="3"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+-->
+<potentialModification name="Lysine oxidation to aminoadipic semialdehyde">
+  <atomsLost>
+    <contains atom="H" count="-3"/>
+    <contains atom="N" count="-1"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="O" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="K"/>
+</potentialModification>
+<potentialModification name="Proline oxidation to pyrrolidinone">
+  <atomsLost>
+    <contains atom="H" count="-2"/>
+    <contains atom="O" count="-1"/>
+    <contains atom="C" count="-1"/>
+  </atomsLost>
+  <effects oneLetter="P"/>
+</potentialModification>
+<potentialModification name="Proline oxidation to pyroglutamic acid">
+  <atomsLost>
+    <contains atom="H" count="-2"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="O" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="P"/>
+</potentialModification>
+<potentialModification name="Proline oxidation to glutamic semialdehyde">
+  <atomsAdded>
+    <contains atom="H" count="2"/>
+    <contains atom="O" count="1"/>
+    <contains atom="C" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="P"/>
+</potentialModification>
+<potentialModification name="Arginine oxidation to glutamic semialdehyde">
+  <atomsLost>
+    <contains atom="H" count="-5"/>
+    <contains atom="N" count="-3"/>
+    <contains atom="C" count="-1"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="O" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="R"/>
+</potentialModification>
+<potentialModification name="Addition of N-formyl met">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="10"/>
+    <contains atom="O" count="2"/>
+    <contains atom="N" count="1"/>
+    <contains atom="C" count="6"/>
+  </atomsAdded>
+  <effectsAnyCTerminus/>
+</potentialModification>
+<potentialModification name="N-ethylmaleimide on cysteines">
+  <atomsAdded>
+    <contains atom="H" count="7"/>
+    <contains atom="O" count="2"/>
+    <contains atom="N" count="1"/>
+    <contains atom="C" count="6"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="Oxidized lysine biotinylated with biotin-LC-hydrazide, reduced">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="26"/>
+    <contains atom="O" count="3"/>
+    <contains atom="N" count="4"/>
+    <contains atom="C" count="16"/>
+  </atomsAdded>
+  <effects oneLetter="K"/>
+</potentialModification>
+<potentialModification name="Deglycosylated Aspargine to Aspartate">
+  <atomsLost>
+    <contains atom="N" count="-1"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="O" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="N"/>
+</potentialModification>
+<potentialModification name="Thio Ether Formation - BTP Adduct">
+  <atomsAdded>
+    <contains atom="H" count="21"/>
+    <contains atom="P" count="1"/>
+    <contains atom="C" count="22"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="Oxidized lysine biotinylated with biotin-LC-hydrazide">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="24"/>
+    <contains atom="O" count="3"/>
+    <contains atom="N" count="4"/>
+    <contains atom="C" count="16"/>
+  </atomsAdded>
+  <effects oneLetter="K"/>
+</potentialModification>
+<potentialModification name="Oxidized proline biotinylated with biotin-LC-hydrazide, reduced">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="29"/>
+    <contains atom="O" count="3"/>
+    <contains atom="N" count="5"/>
+    <contains atom="C" count="16"/>
+  </atomsAdded>
+  <effects oneLetter="P"/>
+</potentialModification>
+<potentialModification name="Oxidized Proline biotinylated with biotin-LC-hydrazide">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="27"/>
+    <contains atom="O" count="3"/>
+    <contains atom="N" count="5"/>
+    <contains atom="C" count="16"/>
+  </atomsAdded>
+  <effects oneLetter="P"/>
+</potentialModification>
+<potentialModification name="Oxidized arginine biotinylated with biotin-LC-hydrazide">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="22"/>
+    <contains atom="O" count="3"/>
+    <contains atom="N" count="2"/>
+    <contains atom="C" count="15"/>
+  </atomsAdded>
+  <effects oneLetter="R"/>
+</potentialModification>
+<potentialModification name="Oxidized arginine biotinylated with biotin-LC-hydrazide, reduced">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="24"/>
+    <contains atom="O" count="3"/>
+    <contains atom="N" count="2"/>
+    <contains atom="C" count="15"/>
+  </atomsAdded>
+  <effects oneLetter="R"/>
+</potentialModification>
+<potentialModification name="EDT-iodo-PEO-biotin">
+  <atomsAdded>
+    <contains atom="S" count="3"/>
+    <contains atom="H" count="34"/>
+    <contains atom="O" count="4"/>
+    <contains atom="N" count="4"/>
+    <contains atom="C" count="20"/>
+  </atomsAdded>
+  <effects oneLetter="T"/>
+  <effects oneLetter="S"/>
+</potentialModification>
+<potentialModification name="ubiquitinylation residue">
+  <atomsAdded>
+    <contains atom="H" count="6"/>
+    <contains atom="O" count="2"/>
+    <contains atom="N" count="2"/>
+    <contains atom="C" count="4"/>
+  </atomsAdded>
+  <effects oneLetter="K"/>
+</potentialModification>
+<potentialModification name="Formylation">
+  <atomsAdded>
+    <contains atom="O" count="1"/>
+    <contains atom="C" count="1"/>
+  </atomsAdded>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+  <effects oneLetter="K"/>
+</potentialModification>
+<!--
+<potentialModification name="N-iodoacetyl, p-chlorobenzyl-12C6-glucamine">
+  <atomsAdded>
+    <contains atom="Cl" count="1"/>
+    <contains atom="H" count="20"/>
+    <contains atom="O" count="6"/>
+    <contains atom="N" count="1"/>
+    <contains atom="C" count="15"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+-->
+<!--
+<potentialModification name="N-iodoacetyl, p-chlorobenzyl-13C6-glucamine">
+  <atomsAdded>
+    <contains atom="Cl" count="1"/>
+    <contains atom="H" count="20"/>
+    <contains atom="O" count="6"/>
+    <contains atom="N" count="1"/>
+    <contains atom="C13" count="6"/>
+    <contains atom="C" count="9"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+-->
+<!--
+<potentialModification name="reductive amination-D">
+  <atomsAdded>
+    <contains atom="H2" count="4"/>
+    <contains atom="C" count="2"/>
+  </atomsAdded>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+  <effects oneLetter="K"/>
+</potentialModification>
+-->
+<potentialModification name="thioacylation of primary amines (N-term and Lys)">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="4"/>
+    <contains atom="O" count="1"/>
+    <contains atom="C" count="3"/>
+  </atomsAdded>
+  <effects oneLetter="N-term"/>
+  <effects oneLetter="K"/>
+</potentialModification>
+<potentialModification name="(cis-delta 5)-tetradecaenoyl">
+  <atomsAdded>
+    <contains atom="H" count="24"/>
+    <contains atom="O" count="1"/>
+    <contains atom="C" count="14"/>
+  </atomsAdded>
+  <effectsAnyCTerminus/>
+</potentialModification>
+<potentialModification name="oxidized threonine biotinylated with biotin hydrazide">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="16"/>
+    <contains atom="O" count="1"/>
+    <contains atom="N" count="4"/>
+    <contains atom="C" count="10"/>
+  </atomsAdded>
+  <effects oneLetter="T"/>
+</potentialModification>
+<potentialModification name="(cis,cis-delta 5, delta 8)-tetradecadienoyl">
+  <atomsAdded>
+    <contains atom="H" count="22"/>
+    <contains atom="O" count="1"/>
+    <contains atom="C" count="14"/>
+  </atomsAdded>
+  <effectsAnyCTerminus/>
+</potentialModification>
+<!--
+<potentialModification name="N-linked glycan core">
+  <atomsAdded>
+    <contains atom="Hex" count="5"/>
+    <contains atom="HexNAc" count="2"/>
+  </atomsAdded>
+  <effects oneLetter="N"/>
+</potentialModification>
+-->
+<potentialModification name="5-dimethylaminonaphthalene-1-sulfonyl">
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="11"/>
+    <contains atom="O" count="2"/>
+    <contains atom="N" count="1"/>
+    <contains atom="C" count="12"/>
+  </atomsAdded>
+  <effects oneLetter="K"/>
+</potentialModification>
+<potentialModification name="ISD a-series (C-Term)">
+  <atomsLost>
+    <contains atom="H" count="-1"/>
+    <contains atom="O" count="-1"/>
+    <contains atom="C" count="-1"/>
+  </atomsLost>
+  <effectsAnyNTerminus/>
+</potentialModification>
+<potentialModification name="amidination of lysines or N-terminal amines with methyl acetimidate">
+  <atomsAdded>
+    <contains atom="H" count="3"/>
+    <contains atom="N" count="1"/>
+    <contains atom="C" count="2"/>
+  </atomsAdded>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+  <effects oneLetter="K"/>
+</potentialModification>
+<!--
+<potentialModification name="Selenium replaces sulphur in Methionine">
+  <atomsLost>
+    <contains atom="S" count="-1"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="Se" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="M"/>
+</potentialModification>
+-->
+<potentialModification name="APTA-d0">
+  <atomsAdded>
+    <contains atom="H" count="18"/>
+    <contains atom="O" count="1"/>
+    <contains atom="N" count="2"/>
+    <contains atom="C" count="9"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="Michael addition of BHT quinone methide to Cysteine and Lysine">
+  <atomsAdded>
+    <contains atom="H" count="22"/>
+    <contains atom="O" count="1"/>
+    <contains atom="C" count="15"/>
+  </atomsAdded>
+  <effects oneLetter="H"/>
+  <effects oneLetter="K"/>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="phosphorylation to amine thiol">
+  <atomsLost>
+    <contains atom="O" count="-1"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="S" count="1"/>
+    <contains atom="H" count="9"/>
+    <contains atom="N" count="1"/>
+    <contains atom="C" count="4"/>
+  </atomsAdded>
+  <effects oneLetter="T"/>
+  <effects oneLetter="S"/>
+</potentialModification>
+<potentialModification name="Serine to Alanine">
+  <atomsLost>
+    <contains atom="O" count="-1"/>
+  </atomsLost>
+  <effects oneLetter="S"/>
+</potentialModification>
+<potentialModification name="Threonine to Alanine">
+  <atomsLost>
+    <contains atom="H" count="-2"/>
+    <contains atom="O" count="-1"/>
+    <contains atom="C" count="-1"/>
+  </atomsLost>
+  <effects oneLetter="T"/>
+</potentialModification>
+<potentialModification name="Serine reduced to aminobutynate">
+  <atomsLost>
+    <contains atom="O" count="-1"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="H" count="1"/>
+    <contains atom="C" count="1"/>
+  </atomsAdded>
+  <effects oneLetter="S"/>
+</potentialModification>
+<potentialModification name="Threonine reduced to aminobutynate">
+  <atomsLost>
+    <contains atom="H" count="-1"/>
+    <contains atom="O" count="-1"/>
+  </atomsLost>
+  <effects oneLetter="T"/>
+</potentialModification>
+<potentialModification name="C13 label (Lysine)">
+  <atomsLost>
+    <contains atom="C" count="-6"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="C13" count="6"/>
+  </atomsAdded>
+  <effects oneLetter="K"/>
+</potentialModification>
+<potentialModification name="C13 label (Tyrosine)">
+  <atomsLost>
+    <contains atom="C" count="-9"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="C13" count="9"/>
+  </atomsAdded>
+  <effects oneLetter="Y"/>
+</potentialModification>
+<potentialModification name="C13 label (Phosphotyrosine)">
+  <atomsLost>
+    <contains atom="C" count="-9"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="H" count="1"/>
+    <contains atom="P" count="1"/>
+    <contains atom="O" count="3"/>
+    <contains atom="C13" count="9"/>
+  </atomsAdded>
+  <effects oneLetter="Y"/>
+</potentialModification>
+<potentialModification name="C13 label (Arginine)">
+  <atomsLost>
+    <contains atom="C" count="-6"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="C13" count="6"/>
+  </atomsAdded>
+  <effects oneLetter="R"/>
+</potentialModification>
+<potentialModification name="Hydroxyphenylglyoxal arginine">
+  <atomsAdded>
+    <contains atom="H" count="4"/>
+    <contains atom="O" count="2"/>
+    <contains atom="C" count="8"/>
+  </atomsAdded>
+  <effects oneLetter="R"/>
+</potentialModification>
+<potentialModification name="2 Hydroxyphenylglyoxal arginine">
+  <atomsAdded>
+    <contains atom="H" count="10"/>
+    <contains atom="O" count="5"/>
+    <contains atom="C" count="16"/>
+  </atomsAdded>
+  <effects oneLetter="R"/>
+</potentialModification>
+<!--
+<potentialModification name="dimethyl labeling (D)">
+  <atomsLost>
+    <contains atom="H" count="-2"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="H2" count="6"/>
+    <contains atom="C" count="2"/>
+  </atomsAdded>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+  <effects oneLetter="K"/>
+</potentialModification>
+-->
+<!--
+<potentialModification name="APTA d3">
+  <atomsAdded>
+    <contains atom="H" count="16"/>
+    <contains atom="H2" count="3"/>
+    <contains atom="O" count="1"/>
+    <contains atom="N" count="2"/>
+    <contains atom="C" count="9"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+-->
+<potentialModification name="6-aminoquinolyl-N-hydroxysuccinimidyl carbamate">
+  <atomsAdded>
+    <contains atom="H" count="6"/>
+    <contains atom="O" count="1"/>
+    <contains atom="N" count="2"/>
+    <contains atom="C" count="10"/>
+  </atomsAdded>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+  <effects oneLetter="K"/>
+</potentialModification>
+<potentialModification name="DiMethyl-CH2D">
+  <atomsAdded>
+    <contains atom="H" count="2"/>
+    <contains atom="H2" count="2"/>
+    <contains atom="C" count="2"/>
+  </atomsAdded>
+  <effectsAnyNTerminus/>
+  <effectsAnyCTerminus/>
+  <effects oneLetter="K"/>
+</potentialModification>
+<potentialModification name="EAPTA d0">
+  <atomsAdded>
+    <contains atom="H" count="20"/>
+    <contains atom="O" count="1"/>
+    <contains atom="N" count="2"/>
+    <contains atom="C" count="10"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="EAPTA d5">
+  <atomsAdded>
+    <contains atom="H" count="15"/>
+    <contains atom="H2" count="5"/>
+    <contains atom="O" count="1"/>
+    <contains atom="N" count="2"/>
+    <contains atom="C" count="10"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="EDT">
+  <atomsLost>
+    <contains atom="O" count="-1"/>
+  </atomsLost>
+  <atomsAdded>
+    <contains atom="S" count="2"/>
+    <contains atom="H" count="4"/>
+    <contains atom="C" count="2"/>
+  </atomsAdded>
+  <effects oneLetter="T"/>
+  <effects oneLetter="S"/>
+</potentialModification>
+<potentialModification name="APTA- d0 with no neutral loss">
+  <atomsAdded>
+    <contains atom="H" count="18"/>
+    <contains atom="O" count="1"/>
+    <contains atom="N" count="2"/>
+    <contains atom="C" count="9"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+<potentialModification name="APTA-d0 with quaternary amine loss">
+  <atomsAdded>
+    <contains atom="H" count="18"/>
+    <contains atom="O" count="1"/>
+    <contains atom="N" count="2"/>
+    <contains atom="C" count="9"/>
+  </atomsAdded>
+  <effects oneLetter="C"/>
+</potentialModification>
+</potentialModifications>
+
+ <!-- possible ion types to look for -->
+ <possible-ions>
+   <!-- TODO: reference immonium ions -->
+<!--   <searchForImmoniums /> -->
+   <!-- TODO: reference internals -->
+<!--   <searchForInternals /> -->
+   <!-- TODO: reference hydration -->
+<!--   <searchForHydration />-->
+  <!-- TODO: reference water loss -->
+<!--  <searchForWaterLoss /> -->
+  <!-- TODO: reference ammonia loss -->
+<!--  <searchForAmmoniaLoss /> -->
+  <!-- TODO: reference urea loss -->
+<!--  <searchForUreaLoss /> -->
+  <!-- TODO: reference poorly called mono-isotopic peaks -->
+<!--  <searchForPoorlyCalledMonoisotopicPeaks /> -->
+ 
+  <!-- TODO: reference standard ion types, switch these to entries similar to the above -->
+<!--
+   <ion name="A" addNTerminus="true">
+     <atomsLost>
+       <contains atom="C" count="1"/>
+       <contains atom="O" count="1"/>
+     </atomsLost>
+   </ion>
+-->
+   <ion name="B" addNTerminus="true" />
+   <!--
+   <ion name="C" addNTerminus="true">
+     <atomsAdded>
+       <contains atom="N" count="1"/>
+       <contains atom="H" count="3"/>
+     </atomsAdded>
+   </ion>
+   <ion name="X" addCTerminus="true">
+     <atomsAdded>
+       <contains atom="O" count="1"/>
+       <contains atom="C" count="1"/>
+     </atomsAdded>
+   </ion>
+-->
+   <ion name="Y" addCTerminus="true">
+     <atomsAdded>
+       <contains atom="H" count="2"/>
+     </atomsAdded>
+   </ion>
+<!--
+   <ion name="Z" addCTerminus="true">
+     <atomsLost>
+       <contains atom="N" count="1"/>
+       <contains atom="H" count="1"/>
+     </atomsLost>
+   </ion>
+ -->
+ </possible-ions>
+ 
+ <!-- how many tryptic cleaves can be missed? -->
+ <maxMissedTrypticCleaves count="2"/>
+ 
+ <!-- should auto machine calibration be used? -->
+ <autoMachineCalibration enable="no" ppmWindow="1000"/>
+</model-config>
